@@ -1,5 +1,9 @@
-import '/index.scss';
+import { Layout } from 'antd';
 
 export const Footer = () => {
-    return <h1>Footer component</h1>
+    return (
+        <Layout.Footer style={{ textAlign: 'center' }}>
+            Шашки онлайн 2024
+        </Layout.Footer>
+    )
 }

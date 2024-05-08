@@ -1,5 +1,14 @@
-import '/index.scss';
+import { Footer } from "../../components/Footer"
+import { Header } from "../../components/Header"
 
 export const HomePage = () => {
-    return <h1>Home page</h1>
+
+    const userName = JSON.parse(localStorage.getItem('user'))?.username;
+
+    return (
+        <>
+            <Header name={userName} />
+            <Footer />
+        </>
+    )
 }
