@@ -1,5 +1,5 @@
-import '/index.scss';
+import "/index.scss";
 
 export const Board = () => {
-    return <h1>Board component</h1>
-}
+  return <h1>Board component</h1>;
+};
