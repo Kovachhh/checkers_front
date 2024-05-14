@@ -1,6 +1,6 @@
 import React, { cloneElement, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { getMe } from "../../api/user";
+import { getUser } from "../../api/user";
 import { Col, Row, Spin } from "antd";
 
 export const AuthContainer = (props) => {
@@ -11,7 +11,7 @@ export const AuthContainer = (props) => {
   const navigate = useNavigate();
 
   const checkUser = async () => {
-    const result = await getMe(user.userId);
+    const result = await getUser(user?.userId);
 
     if (!result) return navigate("/login");
 
@@ -20,6 +20,7 @@ export const AuthContainer = (props) => {
 
   useEffect(() => {
     checkUser();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (isLoading)

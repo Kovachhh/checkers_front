@@ -33,8 +33,8 @@ export const GamesAwaiting = ({
     },
     {
       title: "",
-      key: "_",
-      dataIndex: "_",
+      key: "_id",
+      dataIndex: "_id",
       render: (_id, row) =>
         get(row, "activePlayer._id", null) ===
         get(currentUser, "userId", null) ? (

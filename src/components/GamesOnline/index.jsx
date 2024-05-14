@@ -28,8 +28,8 @@ export const GamesOnline = ({ data, loading, currentUser }) => {
     },
     {
       title: "",
-      key: "_",
-      dataIndex: "_",
+      key: "_id",
+      dataIndex: "_id",
       render: (_id, row) => (
         <Space size="middle">
           {[

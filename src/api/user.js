@@ -1,7 +1,7 @@
 import { message } from "antd";
 import axios from "axios";
 
-export const getMe = async (userId) => {
+export const getUser = async (userId) => {
   try {
     const result = await axios({
       method: "GET",

@@ -45,6 +45,7 @@ export const createGame = async (name) => {
       },
       data: { name },
     });
+
     return result.data;
   } catch (error) {
     console.log("error", error.response);
@@ -61,6 +62,7 @@ export const acceptGame = async (gameId) => {
         Authorization: localStorage.getItem("jwt"),
       },
     });
+
     return result.data;
   } catch (error) {
     console.log("error", error.response);
@@ -77,9 +79,44 @@ export const onFinishGame = async (gameId) => {
         Authorization: localStorage.getItem("jwt"),
       },
     });
-    return result.data.data;
+
+    return result.data;
   } catch (error) {
     console.log("error", error.response);
     message.error(error.response.statusText);
   }
+};
+
+export const getGame = async (id) => {
+  try {
+      const result = await axios({
+          method: 'GET',
+          url: `${process.env.REACT_APP_API}/games/${id}`,
+          headers: {
+              'Authorization': localStorage.getItem('jwt'),
+          },
+      });
+      
+      return result.data;
+  } catch (error) {
+      console.log('error', error.response);
+      message.error(error.response.statusText);
+  };
+};
+
+export const onMoveGame = async (gameId, { id, target }) => {
+  try {
+      const result = await axios({
+          method: 'PUT',
+          url: `${process.env.REACT_APP_API}/games/${gameId}/move`,
+          data: { id, target },
+          headers: {
+              'Authorization': localStorage.getItem('jwt'),
+          },
+      });
+      return result.data;
+  } catch (error) {
+      console.log('error', error.response);
+      message.error(error.response.statusText);
+  };
 };
