@@ -102,7 +102,7 @@ export const GamePage = () => {
           <Breadcrumb.Item>
             <Link to="/">Головна</Link>
           </Breadcrumb.Item>
-          <Breadcrumb.Item>Гра {params.id}</Breadcrumb.Item>
+          <Breadcrumb.Item>Гра {game.name}</Breadcrumb.Item>
         </Breadcrumb>
         <Board
           board={game.board}
