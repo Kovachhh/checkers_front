@@ -56,7 +56,7 @@ export const LoginPage = () => {
                 },
               ]}
             >
-              <Input
+              <Input.Password
                 prefix={<KeyOutlined />}
                 type="password"
                 placeholder="Пароль"

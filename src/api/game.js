@@ -14,7 +14,7 @@ export const getAwaitingGames = async () => {
     return result.data;
   } catch (error) {
     console.log("error", error.response);
-    message.error(error.response.statusText);
+    message.error(error.response.data?.message);
   }
 };
 
@@ -31,7 +31,7 @@ export const getOnlineGames = async () => {
     return result.data;
   } catch (error) {
     console.log("error", error.response);
-    message.error(error.response.statusText);
+    message.error(error.response.data?.message);
   }
 };
 
@@ -49,7 +49,7 @@ export const createGame = async (name) => {
     return result.data;
   } catch (error) {
     console.log("error", error.response);
-    message.error(error.response.statusText);
+    message.error(error.response.data?.message);
   }
 };
 
@@ -66,7 +66,7 @@ export const acceptGame = async (gameId) => {
     return result.data;
   } catch (error) {
     console.log("error", error.response);
-    message.error(error.response.statusText);
+    message.error(error.response.data?.message);
   }
 };
 
@@ -83,7 +83,7 @@ export const onFinishGame = async (gameId) => {
     return result.data;
   } catch (error) {
     console.log("error", error.response);
-    message.error(error.response.statusText);
+    message.error(error.response.data?.message);
   }
 };
 
@@ -100,7 +100,7 @@ export const getGame = async (id) => {
       return result.data;
   } catch (error) {
       console.log('error', error.response);
-      message.error(error.response.statusText);
+      message.error(error.response.data?.message);
   };
 };
 
@@ -117,6 +117,6 @@ export const onMoveGame = async (gameId, { id, target }) => {
       return result.data;
   } catch (error) {
       console.log('error', error.response);
-      message.error(error.response.statusText);
+      message.error(error.response.data?.message);
   };
 };

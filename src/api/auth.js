@@ -13,7 +13,7 @@ export const onSignUp = async ({ email, login, password }) => {
     return true;
   } catch (error) {
     console.log("error", error.response);
-    message.error(error.response.statusText);
+    message.error(error.response.data?.message);
   }
 };
 
@@ -29,6 +29,6 @@ export const onLogin = async ({ email, password }) => {
     return true;
   } catch (error) {
     console.log("error", error.response);
-    message.error(error.response.statusText);
+    message.error(error.response.data?.message);
   }
 };

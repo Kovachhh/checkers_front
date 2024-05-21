@@ -14,7 +14,7 @@ export const getUser = async (userId) => {
     return result.data;
   } catch (error) {
     console.log("error", error.response);
-    message.error(error.response.statusText);
+    message.error(error.response.data?.message);
   }
 };
 
@@ -31,6 +31,6 @@ export const getLeaderboard = async () => {
     return result.data;
   } catch (error) {
     console.log("error", error.response);
-    message.error(error.response.statusText);
+    message.error(error.response.data?.message);
   }
 };
