@@ -30,10 +30,10 @@ export const Header = ({ name }) => {
             <Sphere />
           </Canvas>
         </Col>
-        <Col span={2}>
+        <Col span={4}>
           <span style={{ color: "white", fontSize: "18px" }}>Шашки онлайн</span>
         </Col>
-        <Col span={1} offset={18}>
+        <Col span={1} offset={16}>
           <span style={{ color: "white", fontSize: "18px" }}>{name}</span>
         </Col>
         <Col span={1}>
